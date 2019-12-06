@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../css/addmovie.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<title>addmovie</title>
+	</head>
+	<body>
+		<div id="add-operation">
+		    <div id="add-wrap">
+				<form enctype="multipart/form-data" action="uploadmovie.php" method="POST">
+			    <input type="text" id="moviename" placeholder="Movie Name" name="moviename" v-model="moviename"/>
+			    <div id="select-type">
+			      <input type="radio" id="Action" value="Action" v-model="picked" name="type">
+			      <label for="Action">Action</label>
+			      <input type="radio" id="Romance" value="Romance" v-model="picked" name="type">
+			      <label for="Romance">Romance</label>
+			      <br>
+			      <input type="radio" id="Drama" value="Drama" v-model="picked" name="type">
+			      <label for="Drama">Drama</label>
+			      <input type="radio" id="Comedy" value="Comedy" v-model="picked" name="type">
+			      <label for="Comedy">Comedy</label>
+			    </div>
+			    <textarea  rows="5" cols="50" name="introduction" v-model="introduction" placeholder="Please enter the movie introduction"></textarea>
+				<div id="uploadimage">
+					<input type="file" name="uploadedfile" @change="onFileChanged($event)">
+					<input type="hidden" name="token" id="token"/>
+					<button @click="add_database">Upload!</button>
+				</div>
+				</form>
+				<br>
+				<div id="go-back">
+					<button v-on:click="back">Go Back</button>
+				</div>
+		    </div>
+		</div>
+		<script src="addmovie.js"></script> 
+	</body>
+</html>

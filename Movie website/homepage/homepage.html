@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../css/homepage.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<title>HomePage</title>
+	</head>
+	<body>
+		<div id="homepage">
+			<input type="hidden" name="token" id="token"/>
+			<ul>
+			  <li><a href="javascript:void(0);" v-on:click="init">Home</a></li>
+			  <li><a href="javascript:void(0);" v-on:click="choose('Action')">Action</a></li>
+			  <li><a href="javascript:void(0);" v-on:click="choose('Romance')">Romance</a></li>
+			  <li><a href="javascript:void(0);" v-on:click="choose('Drama')">Drama</a></li>
+			  <li><a href="javascript:void(0);" v-on:click="choose('Comedy')">Comedy</a></li>
+			  <li><a href="javascript:void(0);" v-on:click="log_out" id="logout">Logout</a></li>
+			</ul>
+			<div id="advanced-operation">
+				<input type="text" id="search" placeholder="Search" v-model="content"/>
+				<button id="search_btn" v-on:click="searching">Search</button>
+				<button id="add_btn" v-on:click="addmovie" v-if="judge[0]==='ok'">insert</button>
+			</div>
+		    <div id="filmlist-wrap">
+				<span v-for="film in films" v-bind:key="film.id">
+					<template>
+					    <div class="film-picture">
+						    <div class="filmtitle">
+							    <span class="filmtext">{{film.name}}</span>
+						    </div>
+							<div class="filmstars">
+							    <span class="filmpoints">Rating {{film.stars}}</span>
+							</div>
+					        <div class="filmposter">
+						        <img v-bind:src="film.url" class="movie" alt="fail to show" v-on:click="go(film.name)">
+					        </div>
+							<div class="delete" v-if="film.judge==='ok'">
+								<a href="javascript:void(0);" v-on:click="deletefilm(film.name,film.filmurl)">delete</a>
+							</div>
+				        </div>
+					</template>
+				</span>
+			</div>
+		</div>
+		<script src="homepage.js"></script> 
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../css/login.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<title>Login Page</title>
+	</head>
+	<body>
+		<div id="loginpage">
+		<div id="title">Welcome to the Movie Rating Website!</div>
+		<div id="login-wrap" class="login-wrap">
+		    <input type="text" id="username" placeholder="Username" v-model="username"/>
+		    <input type="password" id="password" placeholder="Password" v-model="password"/>
+		    <button id="login_btn" v-on:click="login">Log In</button>
+		</div>
+		<div id="adlogin-wrap" class="adlogin-wrap">
+		    <input type="text" id="adusername" placeholder="Administer Username" v-model="adusername"/>
+			<input type="password" id="adpassword" placeholder="Administer Password" v-model="adpassword"/>
+		    <button id="adlogin_btn" v-on:click="adlogin">Log In</button>
+		</div>
+		<div id="register-wrap" class="register-wrap">
+			<input type="text" id="registername" placeholder="Username" v-model="registername"/>
+			<input type="text" id="registerpassword" placeholder="Password" v-model="registerpassword"/>
+			<button id="register_btn" v-on:click="register">signin</button>
+		</div>
+		<div id="picture-wrap">
+			<img src="login.jpg" id="login-picture" alt="fail to show">
+		</div>
+	</div>
+	<script src="login.js"></script> 
+	</body>
+</html>
+

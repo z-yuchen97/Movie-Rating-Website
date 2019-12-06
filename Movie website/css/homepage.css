@@ -1,0 +1,159 @@
+html { 
+	font-size: 20px;
+}
+
+ul {
+    position: relative;
+    top: 1rem;
+	width:33rem;
+	list-style-type: none;
+	margin:auto;
+	left:0;
+	right:0;
+	margin-top:1rem;
+	padding: 0;
+	overflow: hidden;
+	background-color: none;
+}
+
+li {
+    display: inline-block;
+}
+ 
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+	font-size: 16px;
+	font-family:"arial black";
+	padding-top: 10%;
+	padding-bottom: 10%;
+	padding-right: 1rem;
+	padding-left: 1rem;
+}
+ 
+li a:hover {
+    background-color: whitesmoke;
+}
+
+li {
+    border-right: 0.0625rem solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+#advanced-operation{
+	position: relative;
+	margin:auto;
+	width:15rem;
+	left:0;
+	right:0;
+	margin-top: 1rem;
+}
+ 
+#filmlist-wrap{
+	border-radius: 20px;
+	width: 60rem;
+	height: 30rem;
+	margin:auto;
+	position: relative;
+	top:1rem;
+	left: 5rem;
+	right: 0;
+	bottom: 0;
+}
+
+.film-picture {
+  display: inline-block;
+  width: 15rem;
+  height: 18rem;
+  margin: 1em;
+}
+
+.movie {
+  width: 12rem;
+  height: 12rem;
+  margin: 2em;
+}
+
+.filmtitle{
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	position: relative;
+	margin:auto;
+	left:0;
+	right:0;
+	text-align: center;
+}
+
+.filmstars{
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	position: relative;
+	margin:auto;
+	margin-top:0.5rem;
+	left:0;
+	right:0;
+	text-align: center;
+}
+
+.filmpoints{
+	width:5rem;
+	font:"Comic Sans MS";
+	    color: palevioletred;
+	    text-shadow: 0 0 20px deeppink,
+	            10px -10px 30px lightyellow,
+	            20px -20px 40px greenyellow,
+	            -20px -60px 50px skyblue,
+	            0px -80px 60px red,
+	            10px -40px 70px hotpink;
+}
+
+.filmposter{
+	position: relative;
+	margin-top: -1rem;
+}
+
+.delete{
+	position: relative;
+	margin-top: -2rem;
+	margin-left: 6rem;
+}
+
+/*input box*/
+input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	 outline-style: none ;
+	    border: 1px solid #ccc; 
+	    border-radius: 3px;	
+}
+
+/*picture show*/
+.film-picture img{
+	cursor: pointer;
+	transition: all 0.5s;
+}
+.film-picture img:hover{
+	transform: scale(1.2);
+}
+
+/*filetitle*/
+.filmtext{
+	font:"Comic Sans MS";
+	    color: palevioletred;
+	    text-shadow: 0 0 20px #fdec84,
+	            10px -10px 30px #ffae35,
+	            20px -20px 40px #ec760c,
+	            -20px -60px 50px #cd4607,
+	            0px -80px 60px #973717,
+	            10px -40px 70px #451b0e;
+}
+	

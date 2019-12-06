@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../css/filmcomment.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<title>filmcomment</title>
+	</head>
+	<body>
+	<div id="filmcomment">
+		<input type="hidden" name="token" id="token"/>
+		<ul>
+		  <li><a href="javascript:void(0);" v-on:click="back">HomePage</a></li>
+		  <li><a href="#comments-area">Comments</a></li>
+		  <li><a href="javascript:void(0);" v-on:click="logout">Logout</a></li>
+		</ul>
+		<div id="film-description">
+			<span v-for="film in films" v-bind:key="film.id">
+				<template>
+			        <div id="film-picture">
+				        <img v-bind:src="film.url" class="movie" alt="fail to show">
+			        </div>
+			        <div id="introduction">
+						<p id="filmtext">{{film.name}}({{film.stars}} points)</p>
+				        <p id="introtext">{{film.intro}}</p>
+			        </div>
+			    </template>
+			</span>
+		</div>
+		<div id="comment-upload">
+			<textarea  id="textarea" rows="8" cols="30" v-model="discuss" placeholder="comment the movie"></textarea>
+			<br>
+			<button v-on:click="add_comment">comment</button>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<button v-on:click="sort_comment">sort comment</button>
+		</div>
+		<div id="rating">
+			<input type="radio" id="1" value="1" v-model="picked">
+			<label for="1">1</label>
+			<input type="radio" id="2" value="2" v-model="picked">
+			<label for="2">2</label>
+			<input type="radio" id="3" value="3" v-model="picked">
+			<label for="3">3</label>
+			<input type="radio" id="4" value="4" v-model="picked">
+			<label for="4">4</label>
+			<input type="radio" id="5" value="5" v-model="picked">
+			<label for="5">5</label>
+			<br>
+			<input type="radio" id="6" value="6" v-model="picked">
+			<label for="6">6</label>
+			<input type="radio" id="7" value="7" v-model="picked">
+			<label for="7">7</label>
+			<input type="radio" id="8" value="8" v-model="picked">
+			<label for="8">8</label>
+			<input type="radio" id="9" value="9" v-model="picked">
+			<label for="9">9</label>
+			<input type="radio" id="10" value="10" v-model="picked">
+			<label for="10">10</label>
+			<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<button v-on:click="rate">Rate this Movie!</button>
+		</div>
+		<div id="comments-area">
+			<span v-for="comment in comments" v-bind:key="comment.id">
+				<template>
+					<span class="profile-image">
+						<img src="profile.jpg" alt="fail to show" class="profile-picture"> 
+					</span>&nbsp;&nbsp;{{comment.username}}
+					<div class="comment-text">{{comment.contents}}</div>
+					<span class="time-text">{{comment.time}}</span>
+					<br>
+					<a href="javascript:void(0);" v-on:click="thumbup(comment.id)" class="thumb-image">
+						<img src="thumbs.jpg" alt="fail to show" class="thumb-picture">
+					</a>({{comment.likes}})
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="javascript:void(0);" v-if="judge[0]==='ok'" v-on:click="remove(comment.id)">delete</a>
+					<div class="user-grade">
+						<img src="rating.jpg" alt="fail to show" class="rating-picture"> &nbsp;&nbsp;{{comment.points}}
+					</div>
+					<hr>
+				</template>
+			</span>
+		</div>
+	</div>
+	<script src="filmcomment.js"></script>
+	</body>
+</html>
+
