@@ -1,7 +1,7 @@
 # Movie-Rating-Website
 This is a movie rating website, which is the first website that I try to use vue.js
 # website url  
-* http://54.84.109.133/moviewebsite/login/login.html 
+* http://35.153.157.195/moviewebsite/login/login.html 
 * administrator name:`zyc`  administrator password:`19970108`
 # Website Function description      
 ### 1.Frameworks used  
